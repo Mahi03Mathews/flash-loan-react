@@ -1,0 +1,77 @@
+.crypto {
+  padding: 1rem;
+  background-color: rgb(31, 31, 31);
+  margin: 8rem auto;
+  width: 25rem;
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+.show-ethereum-err {
+  margin: 0 auto;
+  max-width: 471px;
+  padding-top: 100px;
+  font-weight: bold;
+}
+.new-expense {
+  background-color: #a892ee;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.error-text-mesg {
+  color: #92053d;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+.f26 {
+  font-size: 26px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid #005299;
+  background-color: #006bc7;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+  width: 100%;
+  font-weight: bold;
+  font-size: inherit;
+  margin: 1rem auto;
+}
+
+.button:hover,
+.button:active {
+  background-color: #00335f;
+  border-color: #00335f;
+}
+
+.button.alternative:hover,
+.button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+.bgcolor {
+  border: 1px solid #8d004e;
+  background-color: #c7006d;
+}
+
+.initiate:hover,
+.initiate:active {
+  background-color: #c7006d;
+  border-color: #c7006d;
+}
+
+.initiate.alternative:hover,
+.initiate.alternative:active {
+  background-color: #ddb3f8;
+}
