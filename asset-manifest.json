@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/flash-loan-react/static/css/main.8d5a579f.chunk.css",
+    "main.js": "/flash-loan-react/static/js/main.db8cbbcc.chunk.js",
+    "main.js.map": "/flash-loan-react/static/js/main.db8cbbcc.chunk.js.map",
+    "runtime-main.js": "/flash-loan-react/static/js/runtime-main.166ef3cd.js",
+    "runtime-main.js.map": "/flash-loan-react/static/js/runtime-main.166ef3cd.js.map",
+    "static/js/2.42c76dd3.chunk.js": "/flash-loan-react/static/js/2.42c76dd3.chunk.js",
+    "static/js/2.42c76dd3.chunk.js.map": "/flash-loan-react/static/js/2.42c76dd3.chunk.js.map",
+    "index.html": "/flash-loan-react/index.html",
+    "static/css/main.8d5a579f.chunk.css.map": "/flash-loan-react/static/css/main.8d5a579f.chunk.css.map",
+    "static/js/2.42c76dd3.chunk.js.LICENSE.txt": "/flash-loan-react/static/js/2.42c76dd3.chunk.js.LICENSE.txt",
+    "static/media/loader.f555f7b3.svg": "/flash-loan-react/static/media/loader.f555f7b3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.166ef3cd.js",
+    "static/js/2.42c76dd3.chunk.js",
+    "static/css/main.8d5a579f.chunk.css",
+    "static/js/main.db8cbbcc.chunk.js"
+  ]
+}
