@@ -9,8 +9,9 @@ const loadWindowEthereum = async ({
   if (
     window.isBnb === !1 &&
     window.ethereum &&
-    window.web3 === new Web3(window.ethereum)
+    
   ) {
+    window.web3 === new Web3(window.ethereum)
     await window.ethereum.enable();
   } else {
     if (!window.web3) {
