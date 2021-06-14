@@ -4,7 +4,7 @@ function fixNumber(e) {
 const getLoanEstimates = (loan, network) => {
   let newLoan = { ...loan };
   if (null != newLoan.amount && null != newLoan.amount) {
-    newLoan.swapFee = newLoan.amount / (network ? 400 : 200);
+    newLoan.swapFee = newLoan.amount / (network ? 40000 : 20000);
     newLoan.totalFee = fixNumber(newLoan.tokenFee + newLoan.swapFee);
     newLoan.gain = fixNumber(newLoan.amount * (network ? 0.529 : 0.73));
   }
