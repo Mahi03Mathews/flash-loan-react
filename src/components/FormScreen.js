@@ -84,7 +84,7 @@ function FormScreen(props) {
       {isEstimateLoading ? (
         <Loader />
       ) : (
-        <button onClick={onInitiate}>EXECUTE</button>
+        <button onClick={onInitiate}>INITIATE</button>
       )}
     </div>
   );

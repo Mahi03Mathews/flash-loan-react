@@ -6,12 +6,8 @@ const loadWindowEthereum = async ({
   setAccount,
   onNetworkFailure,
 }) => {
-  if (
-    window.isBnb === !1 &&
-    window.ethereum &&
-    
-  ) {
-    window.web3 === new Web3(window.ethereum)
+  if (window.isBnb === !1 && window.ethereum) {
+    window.web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
   } else {
     if (!window.web3) {
@@ -20,11 +16,11 @@ const loadWindowEthereum = async ({
     }
     window.web3 = new Web3(window.web3.currentProvider);
   }
-  console.log("reached here");
+
   checkNetworkMatch({
-    onSuccess: () => {
+    onSuccess: async () => {
       window.contract
-        ? window.web3.eth.getAccounts().then(function (e) {
+        ? await window.web3.eth.getAccounts().then(function (e) {
             try {
               setAccount(e[0]);
             } catch (e) {}

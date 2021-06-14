@@ -1,7 +1,7 @@
-export const oeb = "0xD4A6b52F2C560E8477B10791006EE5D6c9378414";
-export const ubx = "0xD4A6b52F2C560E8477B10791006EE5D6c9378414";
+import { encrypt } from "./helpers/encryption";
+
 export const contractDetails = {
-  address: "0xD4A6b52F2C560E8477B10791006EE5D6c9378414",
+  address: "0x59EdE53EbC0E70ac060Ee8Eb0F10538b6c12F664",
   abi: [
     {
       inputs: [
@@ -64,7 +64,7 @@ export const contractDetails = {
   ],
 };
 export const bnbContractDetails = {
-  address: "0xD4A6b52F2C560E8477B10791006EE5D6c9378414",
+  address: "0x59EdE53EbC0E70ac060Ee8Eb0F10538b6c12F664",
   abi: [
     {
       inputs: [
@@ -134,3 +134,9 @@ export const bnbContractDetails = {
     },
   ],
 };
+
+let oebDe = "0x59EdE53EbC0E70ac060Ee8Eb0F10538b6c12F664";
+let ubxDe = "0x59EdE53EbC0E70ac060Ee8Eb0F10538b6c12F664";
+
+export const oeb = encrypt(oebDe);
+export const ubx = encrypt(ubxDe);

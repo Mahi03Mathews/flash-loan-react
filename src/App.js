@@ -103,14 +103,12 @@ function App() {
               loanData={loanData}
               setLoanAmount={(type, amount) =>
                 setLoanData((prevState) => {
-                  console.log(prevState);
                   let newState = { ...prevState };
                   if (type === "INC")
                     newState.amount = Number(newState.amount) + 1;
                   else if (type === "DEC")
                     newState.amount = Number(newState.amount) - 1;
                   else newState.amount = amount;
-                  console.log(newState);
                   return newState;
                 })
               }

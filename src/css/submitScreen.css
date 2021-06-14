@@ -29,3 +29,8 @@
 .initiate.alternative:active {
   background-color: #ddb3f8;
 }
+
+.btn-disabled-submit {
+  border-color: grey;
+  background-color: grey;
+}
