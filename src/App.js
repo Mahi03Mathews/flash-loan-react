@@ -19,7 +19,7 @@ function App() {
   });
   const [loanData, setLoanData] = useState({
     amount: 25,
-    tokenFee: 0.01,
+    tokenFee: 0.00001,
     swapFee: 0,
     totalFee: 0,
     gain: 0,
@@ -65,7 +65,7 @@ function App() {
       let newState = { ...prevState };
       newState = {
         ...getLoanEstimates(prevState, formData.network),
-        tokenFee: formData?.network ? 0.01 : 0.05,
+        tokenFee: formData?.network ? 0.00001 : 0.00005,
       };
       return newState;
     });
