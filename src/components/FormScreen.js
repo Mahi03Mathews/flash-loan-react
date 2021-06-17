@@ -3,6 +3,8 @@ import NameSymbol from "./NameSymbol";
 import CryptoFilter from "./CryptoFilter";
 import checkNetworkMatch from "../helpers/checkNetworkMatch";
 import Loader from "./Loader";
+import bnbIcon from "../icons/bnbIcon.png";
+import ethIcon from "../icons/eth_icon.png";
 
 function FormScreen(props) {
   const [btnErr, setBtnErr] = useState("");
@@ -78,7 +80,11 @@ function FormScreen(props) {
       <CryptoFilter
         handleOptionChange={(type) => props.setCryptoType(type === "ETH")}
         selectedItem={props?.formData?.network ? "ETH" : "BNB"}
-        optionsList={["ETH", "BNB"]}
+        selectedImg={props?.formData?.network ? ethIcon : bnbIcon}
+        optionsList={[
+          { text: "ETH", img: ethIcon },
+          { text: "BNB", img: bnbIcon },
+        ]}
       />
       {btnErr && <p className="error-text-mesg">{btnErr}</p>}
       {isEstimateLoading ? (

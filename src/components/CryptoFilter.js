@@ -13,18 +13,37 @@ function CryptoFilter(props) {
           showMenu ? " crypto-filter-label--showMenu" : ""
         }`}
       >
-        {props?.selectedItem}
+        <div>
+          <span>
+            <img
+              src={props?.selectedImg}
+              alt="list-item"
+              className="crypto-filter-img"
+            />
+          </span>
+          <span className="crypto-filter-label-txt">
+            {" "}
+            {props?.selectedItem}
+          </span>
+        </div>
         <i className="fa fa-chevron-down"></i>
       </div>
       {showMenu &&
         props?.optionsList?.map((item, index) =>
-          item !== props?.selectedItem ? (
+          item.text !== props?.selectedItem ? (
             <div
               key={`item-${index}`}
               className="crypto-filter-listItem"
               onClick={() => props?.handleOptionChange(item)}
             >
-              {item}
+              <span>
+                <img
+                  src={item?.img}
+                  alt="list-item"
+                  className="crypto-filter-img"
+                />
+              </span>{" "}
+              <span className="crypto-filter-listItem-text">{item?.text}</span>
             </div>
           ) : null
         )}

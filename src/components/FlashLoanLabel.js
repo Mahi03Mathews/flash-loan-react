@@ -4,7 +4,7 @@ import "../css/FlashLoanLabel.css";
 function FlashLoanLabel(props) {
   return (
     <div className="flashloanlabel">
-      <label>FLASH LOAN</label>
+      <label>FLASH LOAN BETA</label>
     </div>
   );
 }

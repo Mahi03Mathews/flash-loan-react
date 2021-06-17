@@ -1,6 +1,6 @@
 import "./css/Crypto.css";
-
 import { useEffect, useState } from "react";
+import flashLogo from "./icons/flashyield.png";
 
 import FlashLoanLabel from "./components/FlashLoanLabel";
 import FormScreen from "./components/FormScreen";
@@ -79,41 +79,46 @@ function App() {
     );
   else
     return (
-      <div>
-        <FlashLoanLabel />
-        <div className="crypto">
-          {!sumbit ? (
-            <FormScreen
-              setCryptoType={setCryptoType}
-              onInitiate={Initiate}
-              formData={formData}
-              handleFormChange={(value, type) => {
-                setFormData((prevState) => {
-                  let newState = { ...prevState };
-                  newState[type] = value;
-                  return newState;
-                });
-              }}
-            />
-          ) : (
-            <SubmitScreen
-              accountAddress={account}
-              network={formData.network}
-              submitState={submitStateData}
-              loanData={loanData}
-              setLoanAmount={(amount) =>
-                setLoanData((prevState) => {
-                  let newState = { ...prevState };
-                  newState.amount = Number(amount);
-                  newState = {
-                    ...newState,
-                    ...getLoanEstimates(newState, formData?.network),
-                  };
-                  return newState;
-                })
-              }
-            />
-          )}
+      <div className="crypto-app">
+        <div className="crypto-icon">
+          <img src={flashLogo} alt="flash-yield" />
+        </div>
+        <div className="crypto-body">
+          <FlashLoanLabel />
+          <div className="crypto">
+            {!sumbit ? (
+              <FormScreen
+                setCryptoType={setCryptoType}
+                onInitiate={Initiate}
+                formData={formData}
+                handleFormChange={(value, type) => {
+                  setFormData((prevState) => {
+                    let newState = { ...prevState };
+                    newState[type] = value;
+                    return newState;
+                  });
+                }}
+              />
+            ) : (
+              <SubmitScreen
+                accountAddress={account}
+                network={formData.network}
+                submitState={submitStateData}
+                loanData={loanData}
+                setLoanAmount={(amount) =>
+                  setLoanData((prevState) => {
+                    let newState = { ...prevState };
+                    newState.amount = Number(amount);
+                    newState = {
+                      ...newState,
+                      ...getLoanEstimates(newState, formData?.network),
+                    };
+                    return newState;
+                  })
+                }
+              />
+            )}
+          </div>
         </div>
       </div>
     );

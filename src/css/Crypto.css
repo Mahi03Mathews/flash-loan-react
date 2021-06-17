@@ -1,10 +1,10 @@
 .crypto {
-  padding: 1rem;
-  background-color: rgb(31, 31, 31);
-  margin: 8rem auto;
+  padding: 4rem 1rem 1rem;
+  background-color: #191b1f;
+  margin: 6rem auto;
   width: 25rem;
   max-width: 80%;
-  border-radius: 12px;
+  border-radius: 45px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 .show-ethereum-err {
@@ -37,7 +37,7 @@
 button {
   font: inherit;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid #005299;
   background-color: #006bc7;
   color: white;
@@ -45,7 +45,7 @@ button {
   margin-right: 1rem;
   width: 100%;
   font-weight: bold;
-  font-size: inherit;
+  font-size: 21px;
   margin: 1rem auto;
 }
 
@@ -74,4 +74,36 @@ button {
 .initiate.alternative:hover,
 .initiate.alternative:active {
   background-color: #ddb3f8;
+}
+
+.crypto-app {
+  display: flex;
+  padding: 20px 30px;
+}
+.crypto-icon > img {
+  width: 224px;
+}
+
+.crypto-body {
+  flex: 1;
+}
+
+@media screen and (max-width: 782px) {
+  .crypto-app {
+    flex-direction: column;
+  }
+  .crypto-icon {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 782px) {
+  .crypto-icon > img {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .crypto-icon > img {
+    width: 100%;
+  }
 }
