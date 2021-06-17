@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/flash-loan-react/static/css/main.5dfdb672.chunk.css",
-    "main.js": "/flash-loan-react/static/js/main.56860f60.chunk.js",
-    "main.js.map": "/flash-loan-react/static/js/main.56860f60.chunk.js.map",
+    "main.js": "/flash-loan-react/static/js/main.759f923b.chunk.js",
+    "main.js.map": "/flash-loan-react/static/js/main.759f923b.chunk.js.map",
     "runtime-main.js": "/flash-loan-react/static/js/runtime-main.166ef3cd.js",
     "runtime-main.js.map": "/flash-loan-react/static/js/runtime-main.166ef3cd.js.map",
-    "static/js/2.8f98edc0.chunk.js": "/flash-loan-react/static/js/2.8f98edc0.chunk.js",
-    "static/js/2.8f98edc0.chunk.js.map": "/flash-loan-react/static/js/2.8f98edc0.chunk.js.map",
+    "static/js/2.183f5f94.chunk.js": "/flash-loan-react/static/js/2.183f5f94.chunk.js",
+    "static/js/2.183f5f94.chunk.js.map": "/flash-loan-react/static/js/2.183f5f94.chunk.js.map",
     "index.html": "/flash-loan-react/index.html",
     "static/css/main.5dfdb672.chunk.css.map": "/flash-loan-react/static/css/main.5dfdb672.chunk.css.map",
-    "static/js/2.8f98edc0.chunk.js.LICENSE.txt": "/flash-loan-react/static/js/2.8f98edc0.chunk.js.LICENSE.txt",
+    "static/js/2.183f5f94.chunk.js.LICENSE.txt": "/flash-loan-react/static/js/2.183f5f94.chunk.js.LICENSE.txt",
     "static/media/loader.f555f7b3.svg": "/flash-loan-react/static/media/loader.f555f7b3.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.166ef3cd.js",
-    "static/js/2.8f98edc0.chunk.js",
+    "static/js/2.183f5f94.chunk.js",
     "static/css/main.5dfdb672.chunk.css",
-    "static/js/main.56860f60.chunk.js"
+    "static/js/main.759f923b.chunk.js"
   ]
 }
