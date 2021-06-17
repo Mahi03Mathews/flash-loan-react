@@ -101,14 +101,14 @@ function App() {
               network={formData.network}
               submitState={submitStateData}
               loanData={loanData}
-              setLoanAmount={(type, amount) =>
+              setLoanAmount={(amount) =>
                 setLoanData((prevState) => {
                   let newState = { ...prevState };
-                  if (type === "INC")
-                    newState.amount = Number(newState.amount) + 1;
-                  else if (type === "DEC")
-                    newState.amount = Number(newState.amount) - 1;
-                  else newState.amount = amount;
+                  newState.amount = Number(amount);
+                  newState = {
+                    ...newState,
+                    ...getLoanEstimates(newState, formData?.network),
+                  };
                   return newState;
                 })
               }

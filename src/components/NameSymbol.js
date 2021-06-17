@@ -24,13 +24,17 @@ function NameSymbol(props) {
               <div className="input-inc-icon-container">
                 <p
                   className="input-inc-icon"
-                  onClick={props?.handleIncrementClick}
+                  onClick={() =>
+                    props?.handleIncrementClick(props?.inputValue + 5)
+                  }
                 >
                   <i className="fa fa-chevron-up"></i>
                 </p>
                 <p
                   className="input-inc-icon"
-                  onClick={props?.handleDecrementClick}
+                  onClick={() =>
+                    props?.handleDecrementClick(props?.inputValue - 5)
+                  }
                 >
                   <i className="fa fa-chevron-down"></i>
                 </p>

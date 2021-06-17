@@ -49,7 +49,7 @@ function SubmitScreen(props) {
         input="Enter Amount"
         inputValue={props?.loanData?.amount}
         handleInputChange={(e) => {
-          props.setLoanAmount("VAL", e.target.value);
+          props.setLoanAmount(e.target.value);
           if (inputErr) setInputErr("");
         }}
         handleInputBlur={(e) => {
@@ -59,17 +59,17 @@ function SubmitScreen(props) {
         }}
         isIncrement
         isNumber
-        handleIncrementClick={() => {
-          if (props?.loanData?.amount < 1) {
+        handleIncrementClick={(value) => {
+          if (value < 1) {
             setInputErr("Value must be greater than or equal to 2");
           } else if (inputErr) setInputErr("");
-          props.setLoanAmount("INC");
+          props.setLoanAmount(value);
         }}
         inputErr={inputErr}
-        handleDecrementClick={() => {
-          if (props?.loanData?.amount <= 2) {
-            setInputErr("Value must be greater than or equal to 2");
-          } else props.setLoanAmount("DEC");
+        handleDecrementClick={(value) => {
+          if (value <= 1) {
+            props.setLoanAmount(value - (value - 2));
+          } else props.setLoanAmount(value);
         }}
       />
       <CryptoDescrip
