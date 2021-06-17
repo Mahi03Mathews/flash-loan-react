@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/flash-loan-react/static/css/main.d18eb33d.chunk.css",
-    "main.js": "/flash-loan-react/static/js/main.c17dc821.chunk.js",
-    "main.js.map": "/flash-loan-react/static/js/main.c17dc821.chunk.js.map",
+    "main.css": "/flash-loan-react/static/css/main.539bb050.chunk.css",
+    "main.js": "/flash-loan-react/static/js/main.aeef8f4a.chunk.js",
+    "main.js.map": "/flash-loan-react/static/js/main.aeef8f4a.chunk.js.map",
     "runtime-main.js": "/flash-loan-react/static/js/runtime-main.166ef3cd.js",
     "runtime-main.js.map": "/flash-loan-react/static/js/runtime-main.166ef3cd.js.map",
     "static/js/2.e3b00334.chunk.js": "/flash-loan-react/static/js/2.e3b00334.chunk.js",
     "static/js/2.e3b00334.chunk.js.map": "/flash-loan-react/static/js/2.e3b00334.chunk.js.map",
     "index.html": "/flash-loan-react/index.html",
-    "static/css/main.d18eb33d.chunk.css.map": "/flash-loan-react/static/css/main.d18eb33d.chunk.css.map",
+    "static/css/main.539bb050.chunk.css.map": "/flash-loan-react/static/css/main.539bb050.chunk.css.map",
     "static/js/2.e3b00334.chunk.js.LICENSE.txt": "/flash-loan-react/static/js/2.e3b00334.chunk.js.LICENSE.txt",
     "static/media/bnbIcon.12f6ca37.png": "/flash-loan-react/static/media/bnbIcon.12f6ca37.png",
     "static/media/eth_icon.664d214a.png": "/flash-loan-react/static/media/eth_icon.664d214a.png",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.166ef3cd.js",
     "static/js/2.e3b00334.chunk.js",
-    "static/css/main.d18eb33d.chunk.css",
-    "static/js/main.c17dc821.chunk.js"
+    "static/css/main.539bb050.chunk.css",
+    "static/js/main.aeef8f4a.chunk.js"
   ]
 }
