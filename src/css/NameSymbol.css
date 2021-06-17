@@ -94,6 +94,11 @@ input:focus {
 .input-inc-icon > i {
   font-size: 12px;
 }
+@media screen and (max-width: 580px) {
+  .NameSymbol input {
+    width: 100%;
+  }
+}
 @media (min-width: 580px) {
   .expense-item__description {
     flex-direction: row;
